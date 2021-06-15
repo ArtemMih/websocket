@@ -22,10 +22,11 @@ def echo_soc(ws):
         msg = ws.receive()
         print(ws)
         print(msg)
-        if "Hello" in msg:
-            ws.send("LOL")
+        if "hello".lower() in msg.lower() or "hi".lower() in msg.lower() or "привет".lower() in msg.lower() :
+            ws.send("Приветствую")
         else:
-            ws.send("Kek")
+            ws.send("Я не понимаю")
+
 
 
 @app.route('/')
